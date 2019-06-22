@@ -1,4 +1,7 @@
 # Your Code Here
-def map end
-def reduce end
+ def map(arr)
+ end
+ 
+ def reduce(arr)
+ end 
   
