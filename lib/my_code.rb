@@ -11,15 +11,15 @@ end
 
 def reduce(arr, start = nil) # get them set up with correct parameters first
 
-  ###########  start them off here if totally lost, it will pass first reduce test: ###########
+  ###########  start them off here if totally lost; it will pass first reduce test: ###########
 
-  running_total = arr[0]   # grab first item, that's where you start adding
-  i = 1   # start counting at i; only need to add next item, have accounted for first
+  running_total = arr[0]   # grab first item; that's where you start adding
+  i = 1   # start counting at i. only need to add next item; have accounted for first
 
-  # loop through array, pretty straightforward
+  # loop through array; pretty straightforward
   while i < arr.length
     # easiest to explain this next line as it relates to the addition tests (first two tests)
-    # can go into the details of the last four tests after passing them; if you like
+    # can go into the details of the last four tests after passing them, if you like. but prepare for some confusion around || and &&
     running_total = yield(running_total, arr[i]) # need to provide starting point and next item to add; use return val of block to update total
     i += 1   # keep incrementing
   end
