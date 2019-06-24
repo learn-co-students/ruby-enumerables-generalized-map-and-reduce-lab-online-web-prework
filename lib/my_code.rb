@@ -14,7 +14,7 @@ def reduce(arr, start = nil) # get them set up with correct parameters first
   ###########  start them off here if totally lost; it will pass first reduce test: ###########
 
   running_total = arr[0]   # grab first item; that's where you start adding
-  i = 1   # start counting at i. only need to second item; have accounted for first
+  i = 1   # start counting at i. only need to grab second item; have accounted for first
 
   # loop through array; pretty straightforward
   while i < arr.length
