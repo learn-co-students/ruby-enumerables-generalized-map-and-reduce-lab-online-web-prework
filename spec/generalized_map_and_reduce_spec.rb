@@ -33,7 +33,7 @@ describe 'my own reduce' do
 
   it "returns true when all values are truthy" do
     source_array = [1, 2, true, "razmatazz"]
-    expect(reduce(source_array){|memo, n| memo && n}).to be_truthy
+    expect(reduce(source_array){|memo, n| memo && n}).to be_truthy # and will return false if either is falsey; will return second val otherwise
   end
 
   it "returns false when any value is false" do
@@ -42,8 +42,8 @@ describe 'my own reduce' do
   end
 
   it "returns true when a truthy value is present" do
-    source_array = [ false, nil, nil, nil, true]
-    expect(reduce(source_array){|memo, n| memo || n}).to eq(true)
+    source_array = [ false, nil, nil, nil, true]     
+    expect(reduce(source_array){|memo, n| memo || n}).to eq(true)  # if first is true, that gets returned, otherwise second gets returned
   end
 
   it "returns false when no truthy value is present" do
