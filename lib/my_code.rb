@@ -1,25 +1,21 @@
 def map(array)
-new_array = []  
-i = 0
-while i < array.length
-  new_array.push(yield(array[i]))
-  i += 1
-end
-return new_array
+  new_array = []
+  counter = 0
+  
+  while counter < array.length do 
+    new_array << yield(array[counter])
+    counter += 1
+  end
+  
+  new_array
 end
 
 def reduce(array, value = nil)
-  if value
-    reduced = value
-    i = 0
-  else
-    reduced = array[0]
-    i = 1
+ # I need to ask for help. I don't understand how I got the solution before. I probably peeked.
+  while counter < array.length do
+    total += yield(array[counter])
+    counter += 1
   end
-  while i < array.length
-    reduced = yield(reduced, array[i])
-    i += 1
-  end
-  return reduced
+  
+  total
 end
-
