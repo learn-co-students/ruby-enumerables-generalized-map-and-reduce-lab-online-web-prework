@@ -1,12 +1,14 @@
 # Your Code Here
 def map(array)
-  new_array =[]
-  for element in array 
-   new_array.push yield element
+  new = []
+  i = 0 
+  while i < array.length do
+    new.push( yield(array[i]) )
+    i += 1
+  end
+  new
  end
- 
- new_array
-end
+
 
  def reduce(array, start=nil)
    if start
