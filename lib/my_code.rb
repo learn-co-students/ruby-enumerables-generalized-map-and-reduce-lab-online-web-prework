@@ -10,11 +10,15 @@ def map(array)
   return new
 end
 
-def reduce(source_array, starting_point = 0)
-      reduce_total = 0
-      i = 0
+def reduce(source_array, starting_point = nil)
+      reduce_total = source_array[0]
+      i = 1
+      if starting_point != nil
+          reduce_total = starting_point 
+          i = 0
+      end
       while i < source_array.length do      
-       reduce_total = yield(source_array, starting_point)
+       reduce_total = yield(reduce_total, source_array[i])
         i += 1
       end
   reduce_total
