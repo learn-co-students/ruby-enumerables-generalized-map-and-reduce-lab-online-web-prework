@@ -17,4 +17,25 @@ def map (array)
   
 end
 
-#array.map {|n| n * -1}
+  
+def reduce(array)
+  
+  new_value = 0
+  i = 0
+  
+  while i < array.length
+
+    if array[i] == false
+      new_value = false
+    else
+      new_value = true
+    
+  end 
+  
+  i += 1
+  
+end 
+  
+  return new_value
+
+end
