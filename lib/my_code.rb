@@ -18,24 +18,23 @@ def map (array)
 end
 
   
-def reduce(array)
+def reduce(array, b=nil)
   
-  new_value = 0
-  i = 0
+  if b 
+    new_value = b
+    i = 0
+  else
+    new_value = array[0]
+    i = 1
+  end
   
   while i < array.length
-
-    if array[i] == false
-      new_value = false
-    else
-      new_value = true
-    
-  end 
+  
+  new_value = yield(new_value, array[i])
   
   i += 1
+  end
   
-end 
-  
-  return new_value
+  new_value
 
 end
