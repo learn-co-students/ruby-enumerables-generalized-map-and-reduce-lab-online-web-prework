@@ -1,1 +1,1 @@
-# Your Code Here
+expect(map([1, 2, 3, -9]){|n| n * -1})
