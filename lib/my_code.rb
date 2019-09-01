@@ -8,12 +8,8 @@ def map(array)
 end
 
 def reduce(array, start = nil)
-  if start == nil
-    i = 1
-    start = array[0]
-  else
-    i = 0
-  end
+  # If start is defined behave normally, otherwise set start to the first element and skip iterating over it
+  i, start = start == nil ? [1, array[0]] : [0, start]
   while i < array.length do
     start = yield(start, array[i])
     i += 1
