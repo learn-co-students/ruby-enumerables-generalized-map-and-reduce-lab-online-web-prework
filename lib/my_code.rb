@@ -1,10 +1,9 @@
 def my_own_map(array)
   array = [1, 2, 3, -9]
-  n = -1
+  n = 0
   while n < array.length do
-    array.push(array * [n])
+    array.push(yield(array[n]))
     n += 1
   end
-  return array
+  array
 end
-end 
