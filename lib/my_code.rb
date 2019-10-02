@@ -1,24 +1,24 @@
-def map(source_array)
-  new = []
+def map(array) 
   i = 0 
-  while i < source_array.length do 
-    new.push(yield(source_array[i]))
+  new = []
+  while i < array.length do 
+    new << yield(array[i])
     i += 1 
-  end 
-  new
+  end
+  new 
 end 
 
-def reduce(source_array, starting_point = nil)
- if starting_point
-   sum = starting_point
-   i = 0 
- else 
-   sum = source_array[0]
-   i = 1 
- end 
- while i < source_array.length do 
-   sum = yield(sum, source_array[i])
-   i += 1
- end
- sum 
+def reduce(array, sv = nil) 
+  if sv
+    sum = sv 
+    i = 0 
+  else 
+    sum = array[0]
+    i = 1 
+  end 
+  while i < array.length do 
+    sum = yield(sum, array[i])
+    i += 1 
+  end 
+  sum 
 end 
