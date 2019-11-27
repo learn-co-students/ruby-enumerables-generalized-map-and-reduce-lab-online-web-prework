@@ -1,4 +1,7 @@
+
 array = [1,2,3]
+truthy = [true, false, false, true]
+falsy = [false, false, false]
 
 def map(source_array)
   i = 0
@@ -15,30 +18,24 @@ map(array) {|n| n}
 map(array) {|n| n * 2}
 map(array) {|n| n ** 2}
 
-
-def reduce(source_array, starting_point = 0)
-  i = 0
-  value = starting_point
+def reduce(source_array, starting_point = nil)
+  if starting_point
+    value = starting_point
+    i = 0 
+  else 
+    value = source_array[0]
+    i = 1 
+  end 
   while i < source_array.length do 
-    value = yield(source_array[i], value)
+    value = yield(value, source_array[i])
     i += 1 
-  end
-value 
+  end 
+value
 end 
 
-truthy = [true, true, true, true]
-falsy = [false, false, false]
-any = [true, false, false, true]
-
 reduce(array) {|m, n| m + n}
-reduce(truthy).all? {|m, n| m}
-reduce(any).any? {|m, n| m} 
+reduce(truthy) {|m, n| m && n}
+reduce(falsy) {|m, n| m || n}
 
 
 
-
-
-
-
-
-  
