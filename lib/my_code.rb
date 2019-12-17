@@ -19,9 +19,7 @@ def reduce(arr, start = nil)
     sum = arr[0]
   end
   while i < arr.length do
-    # binding.pry
     sum = yield(sum, arr[i])
-    # binding.pry
     i += 1
   end
   sum
