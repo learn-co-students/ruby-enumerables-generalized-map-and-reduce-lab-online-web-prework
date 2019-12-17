@@ -1,3 +1,4 @@
+require 'pry'
 # Your Code Here
 def map(arr)
   i = 0
@@ -9,12 +10,19 @@ def map(arr)
   new_arr
 end
 
-def reduce(arr, start = 0)
-  i = 0
-  total = 0
+def reduce(arr, start = nil)
+  if start
+    i = 0
+    sum = start
+  else
+    i = 1
+    sum = arr[0]
+  end
   while i < arr.length do
-    total += yield(arr[i])
+    # binding.pry
+    sum = yield(sum, arr[i])
+    # binding.pry
     i += 1
   end
-  total
+  sum
 end
