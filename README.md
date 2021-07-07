@@ -20,7 +20,7 @@ language feature of Ruby: the _block_.
 
 Let's look at this solution code from the previous lesson:
 
-```ruby
+```rubyd
 def map_to_negativize(source_array)
   new = []
   i = 0
